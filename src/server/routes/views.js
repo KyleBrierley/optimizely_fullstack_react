@@ -34,10 +34,10 @@ const viewHandler = function(request, reply) {
   // Activate the user for the sorting experiment
   optimizelyManager.getInstance()
     .then((optimizelyInstance) => {
-      const variation = optimizelyInstance.activate(enums.EXPERIMENT_KEYS.SORTING_EXPERIMENT, user.key)
+      const variation = optimizelyInstance.activate(enums.EXPERIMENT_KEYS.test, user.key)
 
       // Use the variation key to determine the property we are sorting on
-      const sortBy = variation === enums.VARIATION_KEYS.SORT_BY_PRICE ? 'price' : 'name'
+      const sortBy = variation === enums.VARIATION_KEYS.variation_1 ? 'price' : 'name'
       const data = itemService.getItems(sortBy)
 
       // Match the routes using the react router, which determines which component to render based on the route
@@ -61,8 +61,8 @@ const viewHandler = function(request, reply) {
 
             // conditionally activate the checkout flow experiment if the user is in the checkout page
             if (location === enums.ROUTES.CHECKOUT) {
-              const checkoutFlowVariation = optimizelyInstance.activate(enums.EXPERIMENT_KEYS.CHECKOUT_FLOW_EXPERIMENT, user)
-              preloadedState.optimizelyExperimentData[enums.EXPERIMENT_KEYS.CHECKOUT_FLOW_EXPERIMENT] = checkoutFlowVariation
+              const checkoutFlowVariation = optimizelyInstance.activate(enums.EXPERIMENT_KEYS.test, user)
+              preloadedState.optimizelyExperimentData[enums.EXPERIMENT_KEYS.test] = checkoutFlowVariation
             }
 
             // Render our React App

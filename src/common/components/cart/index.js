@@ -13,7 +13,7 @@ function mapStateToProps(state) {
 
   return {
     items,
-    checkoutFlow: state.optimizelyExperimentData[enums.EXPERIMENT_KEYS.CHECKOUT_FLOW_EXPERIMENT],
+    checkoutFlow: state.optimizelyExperimentData[enums.EXPERIMENT_KEYS.test],
   }
 }
 
@@ -29,7 +29,7 @@ class Cart extends React.Component {
   render() {
     // determine whether to show one step or two step checkout when the user clicks on the checkout button
     const checkoutLink =
-      this.props.checkoutFlow === enums.VARIATION_KEYS.TWO_STEP_CHECKOUT ?
+      this.props.checkoutFlow === enums.VARIATION_KEYS.variation_2 ?
       '/checkout/shipping' : '/checkout'
     const items = this.props.items
     const subtotal = items.reduce((subtotal, item) => {

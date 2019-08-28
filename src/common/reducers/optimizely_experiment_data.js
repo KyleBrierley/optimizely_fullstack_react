@@ -10,7 +10,7 @@ export default function optimizelyExperimentData(state = initialState, action) {
     case GET_CHECKOUT_FLOW:
       return {
         ...state,
-        [enums.EXPERIMENT_KEYS.CHECKOUT_FLOW_EXPERIMENT]: action.checkoutFlowVariation,
+        [enums.EXPERIMENT_KEYS.test]: action.checkoutFlowVariation,
       }
   }
   return initialState

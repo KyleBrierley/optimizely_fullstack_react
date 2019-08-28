@@ -42,7 +42,7 @@ export function addToCart(item) {
 
     optimizelyManager.getInstance()
       .then((optimizelyInstance) => {
-        optimizelyInstance.track(enums.EVENT_KEYS.ADD_TO_CART, userId)
+        optimizelyInstance.track(enums.EVENT_KEYS.cart_add, userId)
         dispatch(addToCartSuccess(item))
       })
   }
@@ -68,7 +68,7 @@ export function getCheckoutFlow() {
     optimizelyManager.getInstance()
       .then((optimizelyInstance) => {
         const checkoutFlowVariation = optimizelyInstance.getVariation(
-          enums.EXPERIMENT_KEYS.CHECKOUT_FLOW_EXPERIMENT,
+          enums.EXPERIMENT_KEYS.test,
           userId
         )
 
@@ -89,7 +89,7 @@ export function activateCheckoutFlow() {
     optimizelyManager.getInstance()
       .then((optimizelyInstance) => {
         const checkoutFlowVariation = optimizelyInstance.activate(
-          enums.EXPERIMENT_KEYS.CHECKOUT_FLOW_EXPERIMENT,
+          enums.EXPERIMENT_KEYS.test,
           userId
         )
 
@@ -118,7 +118,7 @@ export function completeCheckout() {
 
       optimizelyManager.getInstance()
         .then((optimizelyInstance) => {
-          optimizelyInstance.track(enums.EVENT_KEYS.CHECKOUT_COMPLETE, userId, null, checkoutTotal * 100)
+          optimizelyInstance.track(enums.EVENT_KEYS.page_view, userId, null, checkoutTotal * 100)
           dispatch(completeCheckoutSuccess())
           resolve()
         })

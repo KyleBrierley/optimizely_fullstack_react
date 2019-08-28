@@ -4,12 +4,12 @@
 export default {
   PROJECT_ID: 11210482017, // @TODO: replace with your own project ID
   EXPERIMENT_KEYS: {
-    SORTING_EXPERIMENT: 'test',
-    CHECKOUT_FLOW_EXPERIMENT: 'test',
+    test: 'test',
+    test: 'test',
   },
   VARIATION_KEYS: {
-    SORT_BY_PRICE: 'variation_1',
-    SORT_BY_NAME: 'variation_2'
+    variation_1: 'variation_1',
+    variation_2: 'variation_2'
     // TWO_STEP_CHECKOUT: 'two_step_checkout',
     // ONE_STEP_CHECKOUT: 'one_step_checkout',
   },
