@@ -1,12 +1,20 @@
 {
   "name": "isomorphic-react-demo-app",
   "version": "1.0.0",
-  "description": "Demo isomorphic react app using the Optimizely Node SDK and Javascript SDK for A/B Testing",
+  "description": "Historical isomorphic React/Redux demo for Optimizely full-stack experimentation workflows.",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/start.js --exec babel-node --presets es2015,stage-2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react",
+    "redux",
+    "optimizely",
+    "experimentation",
+    "personalization",
+    "ab-testing"
+  ],
   "dependencies": {
     "babel-preset-react": "^6.11.1",
     "bluebird": "^3.4.0",
